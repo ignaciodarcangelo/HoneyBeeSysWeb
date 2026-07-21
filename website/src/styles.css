@@ -1,0 +1,22 @@
+/* HoneyBee Systems — Marketing website
+   Links the design system's global stylesheet (tokens + fonts) directly;
+   this project is a consumer of ../project, not a fork of it. */
+@import "../../project/styles.css";
+@import "./layout.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--surface-page);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}

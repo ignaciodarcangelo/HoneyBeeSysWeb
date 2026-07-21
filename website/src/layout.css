@@ -1,0 +1,341 @@
+/* Responsive layout rules for the marketing homepage grids and header nav.
+   Kept out of inline styles (unlike the design-system prototype) so media
+   queries can override them without needing !important on every property. */
+
+/* Support page emergency card title: stays on one line once there's
+   enough room for it beside the icon and the call button, wraps below
+   that so it never forces the row to overflow. */
+.hb-emergency-title {
+  white-space: normal;
+}
+@media (min-width: 1150px) {
+  .hb-emergency-title {
+    white-space: nowrap;
+  }
+}
+
+/* Reveal.jsx sets opacity/transform inline, scrubbed step-by-step to
+   scroll position via IntersectionObserver. This transition just smooths
+   each step into continuous-feeling motion — it doesn't drive the effect. */
+.hb-reveal {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Hero text reveals run slower than the site-wide default — a more
+   deliberate pace for the page's first impression. */
+.hb-hero-section .hb-reveal {
+  transition-duration: 0.85s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-reveal {
+    transition: none;
+  }
+}
+
+/* Homepage hero title: shrinks on narrower screens so "IT that works /
+   like a hive." doesn't wrap into a wall of oversized text. */
+.hb-hero-h1 {
+  font-size: 3.75rem;
+}
+@media (max-width: 900px) {
+  .hb-hero-h1 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .hb-hero-h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .hb-hero-h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Secondary-page hero title (PageHero.jsx) — some of these run long
+   ("Everything your IT stack needs, one coordinated team."), so this
+   needs to shrink more aggressively than the homepage's short headline. */
+.hb-page-h1 {
+  font-size: var(--fs-h1);
+}
+@media (max-width: 900px) {
+  .hb-page-h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .hb-page-h1 {
+    font-size: 1.9rem;
+  }
+}
+@media (max-width: 400px) {
+  .hb-page-h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Service card hover glow: a blurred honey-yellow halo behind the card
+   (same tone as the CTA banner), faded in on hover. Sits behind the card
+   via negative z-index — only the ring beyond the card's edges shows,
+   which is the point. */
+.hb-service-card {
+  position: relative;
+  /* Establishes its own stacking context so the negative z-index glow
+     below is scoped to this card, not the whole page's paint order. */
+  z-index: 0;
+}
+.hb-service-card::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: calc(var(--radius-card) + 6px);
+  background: var(--hb-honey-500);
+  filter: blur(28px);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.hb-service-card:hover::before {
+  opacity: 0.6;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb-service-card::before {
+    transition: none;
+  }
+}
+
+/* Wider variant (the full-width rows on the Services page) needs a
+   bigger, softer halo to read at that size — the homepage's tight ring
+   would be lost against a card this large. */
+.hb-service-card--wide::before {
+  inset: -8px;
+  filter: blur(36px);
+}
+
+/* CTA banner cursor spotlight: a soft light-yellow glow that tracks the
+   mouse (CTASection.jsx updates --mx/--my on mousemove), faded in on
+   hover. Sits above the honey gradient background but behind the text
+   (which gets its own stacking context via position:relative z-index:1). */
+.hb-cta-glow {
+  --mx: 50%;
+  --my: 50%;
+}
+.hb-cta-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 340px at var(--mx) var(--my), var(--hb-honey-300), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.hb-cta-glow:hover::before {
+  opacity: 0.85;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb-cta-glow::before {
+    transition: none;
+  }
+}
+
+/* Hero video background: shorter than the source clip's native 16:9 on
+   purpose — makes the section wider-than-video, so object-fit: cover
+   crops vertically. object-position: bottom on the <video> puts that
+   crop entirely at the top, keeping the bottom of the clip fully visible.
+   Below 1080px the content (title + copy + button) needs more height
+   than this 2:1 shape gives, so it falls back to a generous
+   content-driven min-height instead of clipping the copy. */
+.hb-hero-section {
+  min-height: min(860px, 90vh);
+}
+@media (min-width: 1080px) {
+  .hb-hero-section {
+    aspect-ratio: 2 / 1;
+    min-height: 0;
+  }
+}
+
+.hb-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+@media (max-width: 960px) {
+  .hb-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.hb-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 960px) {
+  .hb-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .hb-services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.hb-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 640px) {
+  .hb-why-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.hb-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1000px) {
+  .hb-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .hb-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .hb-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .hb-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hb-hero-actions > button {
+    width: 100% !important;
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 54px;
+    padding: var(--space-3) var(--space-6) !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .hb-service-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--space-6) !important;
+  }
+  .hb-service-row > div {
+    order: initial !important;
+  }
+}
+
+.site-header__toggle {
+  display: none;
+}
+.site-header__mobile-menu {
+  display: none;
+}
+@media (max-width: 860px) {
+  .site-header__nav,
+  .site-header__actions {
+    display: none !important;
+  }
+  .site-header__toggle {
+    display: inline-flex !important;
+  }
+  .site-header__mobile-menu {
+    display: flex !important;
+  }
+}
+
+/* Desktop "Custom Products" hover dropdown. Hover/focus is CSS-only
+   (no JS state) so it can't desync from the mouse; the mobile menu
+   uses its own React-driven accordion instead since touch has no hover. */
+.hb-nav-dropdown {
+  position: relative;
+}
+.hb-nav-dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hb-nav-dropdown__chevron {
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+.hb-nav-dropdown:hover .hb-nav-dropdown__chevron,
+.hb-nav-dropdown:focus-within .hb-nav-dropdown__chevron {
+  transform: rotate(180deg);
+}
+/* Invisible hit-area that bridges the visual gap between the trigger and
+   the panel below it. Without it, the mouse crosses a strip of the page
+   that belongs to neither element, :hover unsets, and the panel vanishes
+   before the pointer ever reaches it. */
+.hb-nav-dropdown__bridge {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  width: 100%;
+  height: var(--space-4);
+}
+.hb-nav-dropdown__panel {
+  position: absolute;
+  top: calc(100% + var(--space-4));
+  left: 50%;
+  transform: translate(-50%, 6px);
+  min-width: 180px;
+  background: var(--hb-slate-800);
+  border: 1px solid var(--border-on-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: var(--z-dropdown);
+}
+.hb-nav-dropdown:hover .hb-nav-dropdown__panel,
+.hb-nav-dropdown:focus-within .hb-nav-dropdown__panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+.hb-nav-dropdown__link {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--text-on-dark);
+  opacity: 0.82;
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body-sm);
+  white-space: nowrap;
+}
+.hb-nav-dropdown__link:hover {
+  opacity: 1;
+  background: var(--hb-slate-700);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb-nav-dropdown__panel,
+  .hb-nav-dropdown__chevron {
+    transition: none;
+  }
+}

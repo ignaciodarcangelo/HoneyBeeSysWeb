@@ -1,0 +1,19 @@
+# Not needed to build/deploy the site
+.claude/
+chats/
+README.md
+
+# Design-system tooling metadata, not consumed by the website build
+project/uploads/
+project/ui_kits/
+project/guidelines/
+project/_ds_bundle.js
+project/_ds_manifest.json
+project/_adherence.oxlintrc.json
+project/*.prompt.md
+project/**/*.prompt.md
+project/**/*.d.ts
+
+# Website build artifacts / deps
+website/node_modules/
+website/dist/

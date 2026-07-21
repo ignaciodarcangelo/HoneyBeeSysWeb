@@ -1,0 +1,9 @@
+/* HoneyBee Systems — Design System
+   Global entry point. Consumers link THIS file only.
+   Keep this file as @import lines only — no rules. */
+
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/effects.css";

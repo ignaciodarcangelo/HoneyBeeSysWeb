@@ -1,0 +1,106 @@
+/* HoneyBee Systems — Color tokens
+   Source of truth: HoneyBee_Paleta_Cromatica.pdf (Sistema de marca 2026)
+
+   Brand quartet & hierarchy:
+     Slate      #232B33  — BASE.   Dominates. Authority, dark surfaces, primary text.
+     Honey Gold #F2B518  — MARCA.  Identifies. The symbol + warm accents. The color the brand OWNS.
+     Amber      #EBA91C  — ACCIÓN. Activates. CTAs and calls-to-action ONLY.
+     Cream      #F5EFE0  — RESPIRO. Breathes. Light surfaces, whitespace.
+
+   Proportion is NOT 50/50 — Slate carries the most visual weight, Honey Gold identifies,
+   Amber appears only where the user must act, Cream provides air. */
+
+:root {
+  /* ---- Brand quartet (exact) ---- */
+  --hb-slate:      #232B33;
+  --hb-honey:      #F2B518;
+  --hb-amber:      #EBA91C;
+  --hb-cream:      #F5EFE0;
+
+  /* Honey gradient — "premium" digital/print variant of the symbol.
+     Rule from brand book: the FLAT gold is the master; the gradient is a variant. */
+  --hb-honey-grad-from: #F7C43A;
+  --hb-honey-grad-to:   #E09A0F;
+  --hb-gradient-honey:  linear-gradient(150deg, #F7C43A 0%, #E09A0F 100%); /* @kind color */
+
+  /* ---- Slate scale (base hue) ---- */
+  --hb-slate-950: #12171C;
+  --hb-slate-900: #171D23;
+  --hb-slate-800: #1D242B;
+  --hb-slate-700: #232B33; /* = brand Slate */
+  --hb-slate-600: #313C46;
+  --hb-slate-500: #465563;
+  --hb-slate-400: #647585;
+  --hb-slate-300: #8E9DAB;
+  --hb-slate-200: #BCC6CE;
+  --hb-slate-100: #DDE3E8;
+  --hb-slate-50:  #EEF1F3;
+
+  /* ---- Honey scale (warm brand hue) ---- */
+  --hb-honey-700: #B67D07;
+  --hb-honey-600: #D69410;
+  --hb-honey-500: #F2B518; /* = brand Honey Gold */
+  --hb-honey-400: #F7C43A;
+  --hb-honey-300: #FAD46E;
+  --hb-honey-200: #FCE4A3;
+  --hb-honey-100: #FDF0CC;
+  --hb-honey-50:  #FEF8E8;
+
+  /* ---- Cream / warm neutrals ---- */
+  --hb-cream-500: #F5EFE0; /* = brand Cream */
+  --hb-cream-300: #FAF6EE;
+  --hb-cream-100: #FDFBF6;
+  --hb-cream-700: #E7DEC8;
+  --hb-cream-800: #D6CBAF;
+
+  /* ---- Semantic status ---- */
+  --hb-success: #2E9E5B;
+  --hb-success-soft: #E3F3EA;
+  --hb-warning: #EBA91C; /* shares Amber */
+  --hb-warning-soft: #FBEFD1;
+  --hb-danger:  #D64545;
+  --hb-danger-soft: #F9E4E4;
+  --hb-info:    #3B7BB5;
+  --hb-info-soft: #E4EEF6;
+
+  --hb-white: #FFFFFF;
+  --hb-black: #12171C;
+
+  /* =====================================================================
+     SEMANTIC ALIASES — reach for these in product UI, not the raw scale.
+     ===================================================================== */
+
+  /* Surfaces (light theme is default) */
+  --surface-page:      var(--hb-cream-100);
+  --surface-card:      var(--hb-white);
+  --surface-sunken:    var(--hb-cream-300);
+  --surface-inverse:   var(--hb-slate-700);
+  --surface-inverse-2: var(--hb-slate-800);
+  --surface-honey-soft:var(--hb-honey-50);
+
+  /* Text */
+  --text-strong:   var(--hb-slate-800);
+  --text-body:     var(--hb-slate-600);
+  --text-muted:    var(--hb-slate-400);
+  --text-on-dark:  var(--hb-cream-100);
+  --text-on-dark-muted: var(--hb-slate-300);
+  --text-on-honey: var(--hb-slate-800); /* dark text on gold — the brand pairing */
+  --text-link:     var(--hb-honey-700);
+
+  /* Brand accents */
+  --brand:         var(--hb-honey-500);
+  --brand-strong:  var(--hb-honey-600);
+  --action:        var(--hb-amber);       /* CTA only */
+  --action-hover:  var(--hb-honey-600);
+  --action-press:  var(--hb-honey-700);
+
+  /* Borders & dividers */
+  --border-subtle: var(--hb-slate-100);
+  --border-default:var(--hb-slate-200);
+  --border-strong: var(--hb-slate-300);
+  --border-on-dark:rgba(245, 239, 224, 0.14);
+  --border-focus:  var(--hb-honey-500);
+
+  /* Focus ring */
+  --ring: 0 0 0 3px rgba(242, 181, 24, 0.45);
+}
