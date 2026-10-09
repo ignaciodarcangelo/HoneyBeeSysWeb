@@ -1,0 +1,45 @@
+/* HoneyBee Systems — Effects: radii, shadows, borders, motion
+   Cards are calm: soft rounding, low-spread shadows tinted toward slate.
+   No neon glows. The honeycomb hex is the only "sharp" geometry, reserved
+   for the logo, iconography frames, and decorative patterns. */
+
+:root {
+  /* Radii — rounded but not pill-soft; hardware/engineered feel */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+  --radius-card: var(--radius-lg);
+
+  /* Borders */
+  --border-width: 1px;              /* @kind other */
+  --border-width-strong: 2px;       /* @kind other */
+
+  /* Shadows — cool slate-tinted, layered, never pure black */
+  --shadow-xs: 0 1px 2px rgba(35, 43, 51, 0.06);
+  --shadow-sm: 0 1px 3px rgba(35, 43, 51, 0.10), 0 1px 2px rgba(35, 43, 51, 0.06);
+  --shadow-md: 0 4px 12px rgba(35, 43, 51, 0.10), 0 2px 4px rgba(35, 43, 51, 0.06);
+  --shadow-lg: 0 12px 28px rgba(35, 43, 51, 0.14), 0 4px 10px rgba(35, 43, 51, 0.08);
+  --shadow-xl: 0 24px 56px rgba(35, 43, 51, 0.18), 0 8px 18px rgba(35, 43, 51, 0.10);
+
+  /* Honey glow — reserved for hover on the primary CTA only */
+  --shadow-honey: 0 6px 20px rgba(242, 181, 24, 0.38);
+
+  /* Motion — brisk, confident, no bounce. Bees are efficient. */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);   /* @kind other */
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1.2); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);     /* @kind other */
+  --dur-fast: 120ms;   /* @kind other */
+  --dur-base: 200ms;   /* @kind other */
+  --dur-slow: 320ms;   /* @kind other */
+
+  /* Z-index */
+  --z-sticky: 100;   /* @kind other */
+  --z-dropdown: 200; /* @kind other */
+  --z-overlay: 300;  /* @kind other */
+  --z-modal: 400;    /* @kind other */
+  --z-toast: 500;    /* @kind other */
+}

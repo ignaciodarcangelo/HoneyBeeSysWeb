@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../../../project/components/layout/Card.jsx";
+import { Card } from "../../project/components/layout/Card.jsx";
 import { IconArrow } from "../sections/icons.jsx";
 
 export function FaqItem({ q, a, open, onToggle }) {

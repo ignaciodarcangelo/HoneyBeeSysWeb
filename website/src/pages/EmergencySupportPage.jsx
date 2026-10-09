@@ -1,11 +1,11 @@
 import React from "react";
-import { Card } from "../../../project/components/layout/Card.jsx";
-import { Input } from "../../../project/components/forms/Input.jsx";
-import { Textarea } from "../../../project/components/forms/Textarea.jsx";
-import { Button } from "../../../project/components/forms/Button.jsx";
+import { Card } from "../../project/components/layout/Card.jsx";
+import { Input } from "../../project/components/forms/Input.jsx";
+import { Textarea } from "../../project/components/forms/Textarea.jsx";
+import { Button } from "../../project/components/forms/Button.jsx";
 import { Seo } from "../components/Seo.jsx";
 import { SEO } from "../seoData.js";
-import { HexIcon } from "../../../project/components/brand/HexIcon.jsx";
+import { HexIcon } from "../../project/components/brand/HexIcon.jsx";
 import { PageHero } from "../sections/PageHero.jsx";
 import { IconSend, IconPhone, IconActivity } from "../sections/icons.jsx";
 

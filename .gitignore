@@ -13,6 +13,14 @@ project/_adherence.oxlintrc.json
 project/*.prompt.md
 project/**/*.prompt.md
 project/**/*.d.ts
+website/project/uploads/
+website/project/ui_kits/
+website/project/guidelines/
+website/project/_ds_bundle.js
+website/project/_ds_manifest.json
+website/project/_adherence.oxlintrc.json
+website/project/**/*.prompt.md
+website/project/**/*.d.ts
 
 # Website build artifacts / deps
 website/node_modules/

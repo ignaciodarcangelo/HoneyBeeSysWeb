@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "../../../project/components/layout/Card.jsx";
-import { Badge } from "../../../project/components/layout/Badge.jsx";
+import { Card } from "../../project/components/layout/Card.jsx";
+import { Badge } from "../../project/components/layout/Badge.jsx";
 import { Seo } from "../components/Seo.jsx";
 import { SEO } from "../seoData.js";
 import { PageHero } from "../sections/PageHero.jsx";

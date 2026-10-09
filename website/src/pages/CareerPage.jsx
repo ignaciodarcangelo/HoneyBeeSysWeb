@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../../project/components/forms/Button.jsx";
+import { Button } from "../../project/components/forms/Button.jsx";
 import { Seo } from "../components/Seo.jsx";
 import { SEO } from "../seoData.js";
 import { PageHero } from "../sections/PageHero.jsx";

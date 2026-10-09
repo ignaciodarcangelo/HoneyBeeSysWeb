@@ -1,7 +1,7 @@
 /* HoneyBee Systems — Marketing website
    Links the design system's global stylesheet (tokens + fonts) directly;
    this project is a consumer of ../project, not a fork of it. */
-@import "../../project/styles.css";
+@import "../project/styles.css";
 @import "./layout.css";
 
 * {

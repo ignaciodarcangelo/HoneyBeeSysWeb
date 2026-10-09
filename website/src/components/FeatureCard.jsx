@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "../../../project/components/layout/Card.jsx";
-import { HexIcon } from "../../../project/components/brand/HexIcon.jsx";
+import { Card } from "../../project/components/layout/Card.jsx";
+import { HexIcon } from "../../project/components/brand/HexIcon.jsx";
 
 export function FeatureCard({ icon: Ic, title, body }) {
   return (

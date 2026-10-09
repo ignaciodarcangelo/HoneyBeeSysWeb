@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../../project/components/forms/Button.jsx";
+import { Button } from "../../project/components/forms/Button.jsx";
 import { Reveal } from "../components/Reveal.jsx";
 import { IconArrow } from "./icons.jsx";
 

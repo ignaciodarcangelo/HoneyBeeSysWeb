@@ -1,7 +1,7 @@
 import React from "react";
-import { Card } from "../../../project/components/layout/Card.jsx";
-import { HexIcon } from "../../../project/components/brand/HexIcon.jsx";
-import { Button } from "../../../project/components/forms/Button.jsx";
+import { Card } from "../../project/components/layout/Card.jsx";
+import { HexIcon } from "../../project/components/brand/HexIcon.jsx";
+import { Button } from "../../project/components/forms/Button.jsx";
 import { Seo } from "../components/Seo.jsx";
 import { SEO } from "../seoData.js";
 import { PageHero } from "../sections/PageHero.jsx";

@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Logo } from "../../../project/components/brand/Logo.jsx";
+import { Logo } from "../../project/components/brand/Logo.jsx";
+import { IconFacebook, IconLinkedIn } from "./icons.jsx";
+
+const SOCIALS = [
+  ["LinkedIn", "https://www.linkedin.com/company/112179160/", IconLinkedIn],
+  ["Facebook", "https://www.facebook.com/profile.php?id=61587580223303", IconFacebook],
+];
 
 /* Links point to real routes where a page exists; the rest stay inert
    text, matching the original prototype, until those pages are built. */
@@ -94,6 +100,20 @@ export function SiteFooter() {
           <p style={{ marginTop: "var(--space-3)", color: "var(--hb-honey-400)", fontSize: "var(--fs-caption)", fontWeight: "var(--fw-bold)", letterSpacing: "0.04em", textTransform: "uppercase" }}>
             Brad Felder | Founder
           </p>
+          <div className="hb-footer-socials">
+            {SOCIALS.map(([label, href, Icon]) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`HoneyBee Systems on ${label}`}
+                className="hb-footer-social"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </div>
         {COLUMNS.map(([heading, items]) => (
           <FooterColumn key={heading} heading={heading} items={items} />

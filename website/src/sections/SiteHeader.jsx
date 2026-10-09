@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Logo } from "../../../project/components/brand/Logo.jsx";
-import { Button } from "../../../project/components/forms/Button.jsx";
+import { Logo } from "../../project/components/brand/Logo.jsx";
+import { Button } from "../../project/components/forms/Button.jsx";
 import { IconMenu, IconX, IconChevronDown } from "./icons.jsx";
 
 const NAV_LINKS = [
@@ -75,7 +75,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="site-header__actions" style={{ display: "flex", alignItems: "center", gap: "var(--space-3)" }}>
-          <Button variant="primary" size="sm" onClick={() => navigate("/emergency-support")}>
+          <Button variant="ghost" size="sm" className="hb-header-support-btn" onClick={() => navigate("/emergency-support")}>
             Get support
           </Button>
         </div>
@@ -167,8 +167,9 @@ export function SiteHeader() {
             )
           )}
           <Button
-            variant="primary"
+            variant="ghost"
             size="sm"
+            className="hb-header-support-btn"
             style={{ marginTop: "var(--space-2)" }}
             onClick={() => {
               setMenuOpen(false);

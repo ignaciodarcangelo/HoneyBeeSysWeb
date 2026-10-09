@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card } from "../../../project/components/layout/Card.jsx";
-import { HexIcon } from "../../../project/components/brand/HexIcon.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import { Card } from "../../project/components/layout/Card.jsx";
+import { HexIcon } from "../../project/components/brand/HexIcon.jsx";
+import { Button } from "../../project/components/forms/Button.jsx";
 import { Reveal } from "../components/Reveal.jsx";
 import { IconHeadset, IconShield, IconCloud, IconServer, IconLock, IconActivity, IconArrow } from "./icons.jsx";
 
@@ -15,6 +16,8 @@ const SERVICES = [
 ];
 
 export function ServicesGrid() {
+  const navigate = useNavigate();
+
   return (
     <section id="services" style={{ background: "var(--surface-page)", padding: "var(--section-y) var(--space-8)" }}>
       <div style={{ maxWidth: "var(--container-xl)", margin: "0 auto" }}>
@@ -68,23 +71,18 @@ export function ServicesGrid() {
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: "var(--space-10)" }}>
-          <Link
-            to="/services"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              color: "var(--hb-honey-700)",
-              fontWeight: "var(--fw-bold)",
-              fontSize: "var(--fs-body)",
-              textDecoration: "none",
-            }}
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => navigate("/services")}
+            iconRight={
+              <span style={{ width: 18, height: 18, display: "inline-flex" }}>
+                <IconArrow />
+              </span>
+            }
           >
             See all services
-            <span style={{ width: 16, height: 16, display: "inline-flex" }}>
-              <IconArrow />
-            </span>
-          </Link>
+          </Button>
         </div>
       </div>
     </section>
