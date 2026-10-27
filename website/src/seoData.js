@@ -8,7 +8,7 @@
 export const SEO = {
   home: {
     path: "/",
-    title: "Managed IT & Cybersecurity in Florida",
+    title: "Managed IT & Cybersecurity on the East Coast",
     description:
       "HoneyBee Systems keeps your technology connected, protected, and supported, so your team can stay productive and focus on running the business.",
   },

@@ -135,7 +135,7 @@ export function SiteFooter() {
         }}
       >
         <span>© 2026 HoneyBee Systems. All rights reserved.</span>
-        <span>Privacy · Terms · Miami, FL</span>
+        <span>Privacy · Terms · Miami, FL · Serving the East Coast</span>
       </div>
     </footer>
   );

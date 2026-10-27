@@ -10,7 +10,7 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Quick reference
 
-**Brand:** HoneyBee Systems — a Managed Service Provider (MSP) in Florida serving clients statewide and across the USA. Voice: friendly but expert; a beehive working in sync to solve IT problems.
+**Brand:** HoneyBee Systems — a Managed Service Provider (MSP) based in Florida, serving clients across the East Coast (currently Florida and New York) and the USA. Voice: friendly but expert; a beehive working in sync to solve IT problems.
 
 **Colors (hierarchy matters — not 50/50):**
 - Slate `#232B33` — BASE, dominant. Dark surfaces, primary text, authority.

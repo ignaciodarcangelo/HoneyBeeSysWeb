@@ -56,7 +56,7 @@ export function Hero() {
                 clipPath: "polygon(27% 8%, 73% 8%, 100% 50%, 73% 92%, 27% 92%, 0% 50%)",
               }}
             />{" "}
-            Florida-based managed IT &amp; cybersecurity
+            Managed IT &amp; cybersecurity across the East Coast
           </span>
         </Reveal>
         <Reveal delay={220}>
